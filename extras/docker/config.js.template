@@ -44,7 +44,7 @@ config.pep = {
 	token: {
 		secret: (process.env.PEP_TOKEN_SECRET ||  '')  // Secret must be configured in order validate a jwt
 	},
-	trusted_apps : []
+	trusted_apps : process.env.PEP_TRUSTED_APPS ? process.env.PEP_TRUSTED_APPS.split(",") : []
 }
 
 // in seconds
